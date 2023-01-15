@@ -25,6 +25,11 @@ int_stack_t* int_stack_from(int array[], size_t size);
 /// @param stack The stack to destroy.
 void int_stack_destroy(int_stack_t* stack);
 
+/// @brief Get the length/size of the stack.
+/// @param stack The stack.
+/// @return Length of the stack.
+size_t int_stack_len(int_stack_t* stack);
+
 /// @brief Check if the stack is empty.
 /// @param stack The stack.
 /// @return True if the stack is empty.

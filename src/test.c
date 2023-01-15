@@ -70,7 +70,7 @@ void test_stack_conditionals() {
     assert(int_stack_is_empty(stack));
 
     int a[] = {0, 1, 2};
-    int_stack_t* second = int_stack_from(a, sizeof(a));
+    int_stack_t* second = int_stack_from(a, sizeof(a) / sizeof(int));
     assert(int_stack_is_full(second));
 
     int_stack_destroy(stack);

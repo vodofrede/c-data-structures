@@ -34,6 +34,11 @@ void int_stack_destroy(int_stack_t* stack) {
     free(stack);
 }
 
+size_t int_stack_len(int_stack_t* stack) {
+    assert(stack);
+    return stack->size;
+}
+
 int int_stack_is_empty(int_stack_t* stack) {
     assert(stack);
     return !stack->size;
