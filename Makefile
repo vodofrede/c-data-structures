@@ -1,10 +1,10 @@
-CFLAGS := -std=c11 -Wall -Wextra -pedantic -fsanitize=undefined,address
+CFLAGS := -std=c11 -g3 -Wall -Wextra -pedantic -fsanitize=undefined,address
 
 BINARIES := src/main.c src/test.c
 SOURCES := $(filter-out $(BINARIES), $(wildcard src/*.c))
 
-.PHONY: all clean
-all: test main
+.PHONY: clean
+all: test
 
 clean: rm -r bin
 
