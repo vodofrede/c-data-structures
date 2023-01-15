@@ -3,7 +3,7 @@ CFLAGS := -std=c11 -g3 -Wall -Wextra -pedantic -fsanitize=undefined,address
 BINARIES := src/main.c src/test.c
 SOURCES := $(filter-out $(BINARIES), $(wildcard src/*.c))
 
-.PHONY: clean
+.PHONY: clean docs
 all: test
 
 clean: rm -r bin
@@ -16,3 +16,7 @@ test: $(SOURCES)
 	@mkdir -p bin
 	$(CC) $(CFLAGS) $(SOURCES) src/test.c -o bin/test
 	@bin/test
+
+docs: 
+	@doxygen
+	xdg-open docs/html/index.html

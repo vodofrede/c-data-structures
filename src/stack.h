@@ -18,6 +18,7 @@ int_stack_t* int_stack_with_capacity(size_t capacity);
 
 /// @brief Create a new stack with initial values given by the passed array.
 /// @param array Initial values.
+/// @param size Amount of values.
 /// @return A pointer to the newly created stack.
 int_stack_t* int_stack_from(int array[], size_t size);
 
@@ -124,8 +125,8 @@ void int_stack_rotate_right(int_stack_t* stack, size_t amount);
 
 /// @brief Swap two values in the stack.
 /// @param stack The stack.
-/// @param left Index of the first element.
-/// @param right Index of the second element.
+/// @param first Index of the first element.
+/// @param second Index of the second element.
 void int_stack_swap(int_stack_t* stack, size_t first, size_t second);
 
 /// @brief Reverse the order of the values in the stack in-place.
@@ -182,7 +183,7 @@ int* int_stack_find(int_stack_t* stack, int_stack_filter_fn filter_fn);
 /// @brief Reduces every value down to to a single int accumulator.
 /// @param stack The stack.
 /// @param initial Initial value for the accumulator.
-/// @param map_fn Function which takes an accumulator and an int value and folds the value into the accumulator.
+/// @param fold_fn Function which takes an accumulator and an int value and folds the value into the accumulator.
 int int_stack_fold(int_stack_t* stack, int initial, int_stack_fold_fn fold_fn);
 
 /// @brief Sums the values of the stack.

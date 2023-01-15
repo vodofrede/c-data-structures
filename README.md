@@ -2,7 +2,7 @@
 
 Currently includes:
 
--   `stack.c, stack.h`: Integer-only stack.
+-   `stack.h`: Integer-only stack.
 
 ## Future features
 
