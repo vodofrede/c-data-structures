@@ -4,9 +4,10 @@ BINARIES := src/main.c src/test.c
 SOURCES := $(filter-out $(BINARIES), $(wildcard src/*.c))
 
 .PHONY: clean docs
-all: test
+all: test main
 
-clean: rm -r bin
+clean: 
+	@-rm -r bin
 
 main: $(SOURCES)
 	@mkdir -p bin
